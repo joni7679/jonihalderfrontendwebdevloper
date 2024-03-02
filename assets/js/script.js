@@ -1,6 +1,13 @@
-let menuBtn = document.querySelector("#menu-btn");
-menuBtn.addEventListener("click", () => {
-    console.log("hello")
+//res
+let hamburgerBtn = document.getElementById("menu-btn");
+hamburgerBtn.addEventListener("click", () => {
+    document.querySelector("nav").style.right = "50%"
+})
+
+let closeBtn = document.getElementById("close-btn");
+closeBtn.addEventListener("click", () => {
+    document.querySelector("nav").style.right = "200%"
+
 })
 
 

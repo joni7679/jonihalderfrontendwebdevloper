@@ -58,6 +58,7 @@ nav a {
 
 #close-btn {
     cursor: pointer;
+    display: none;
 }
 
 #email-icon {
@@ -167,7 +168,7 @@ nav a {
 }
 
 .about-right {
-    width: 458px;
+    width: 550px;
     /* background-color: yellowgreen; */
     padding: 7PX;
 }
@@ -437,7 +438,7 @@ textarea.input {
     background-color: #fff;
     border: 2px solid #fafafa;
     font-size: 0.95rem;
-    color:var(--primary-color);
+    color: var(--primary-color);
     line-height: 1;
     border-radius: 5px;
     outline: none;
@@ -472,7 +473,7 @@ textarea.input {
     opacity: 0;
     transition: 0.3s;
     height: 5px;
-    background-color:var(--primary-color);
+    background-color: var(--primary-color);
     top: 50%;
     transform: translateY(-50%);
 }
@@ -602,6 +603,41 @@ textarea.input {
     opacity: 0.2;
 }
 
+.contact-section {
+    background: #FAFAFA;
+    padding: 44px 24px;
+}
+
+/* media query code */
+@media (max-width:1000px) {
+    #menu-btn {
+        display: block;
+    }
+
+    #close-btn {
+        display: block;
+    }
+
+    nav {
+        position: absolute;
+        top: 0;
+        width: 50%;
+        height: 100vh;
+        background-color: var(--bg-sec-color);
+        right: 200%;
+        transition: all 0.5s;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin-top: 12px;
+    }
+
+}
+
 @media (max-width: 850px) {
     .form {
         grid-template-columns: 1fr;
@@ -613,6 +649,7 @@ textarea.input {
         right: 65px;
         transform: scale(0.95);
     }
+
     .contact-form:before {
         top: -13px;
         left: initial;
@@ -640,31 +677,6 @@ textarea.input {
 }
 
 
-/* media query code */
-@media (max-width:1000px) {
-    #menu-btn {
-        display: block;
-    }
-
-    nav {
-        position: absolute;
-        top: 0;
-        width: 50%;
-        height: 100vh;
-        background-color: var(--bg-sec-color);
-        right: 200%;
-        transition: all 0.5s;
-    }
-
-    nav ul {
-        flex-direction: column;
-    }
-
-    nav ul li {
-        margin-top: 12px;
-    }
-}
-
 @media (max-width:800px) {
 
     .home-section,
@@ -679,5 +691,11 @@ textarea.input {
 
     .skills-section {
         margin-top: 290px;
+    }
+}
+
+@media (max-width:798px) {
+    .bannner-tittle {
+        margin-top: 70px !important;
     }
 }
