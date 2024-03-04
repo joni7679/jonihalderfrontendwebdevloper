@@ -201,15 +201,35 @@ nav a {
 
 /* skill section 
 */
+.skill {
+    width: 250px;
+    
+}
+
+.slick-active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slick-initialized .slick-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slick-slide {
+    text-align: center;
+}
 
 .skill img {
     width: 80px;
+    text-align: center !important;
 }
 
 .my-skill {
     margin-top: 24px;
     padding: 30PX;
-    /* BACKGROUND: RED; */
 }
 
 .skills-section {
