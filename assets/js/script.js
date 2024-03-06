@@ -12,7 +12,7 @@ closeBtn.addEventListener("click", () => {
 
 
 
-$('.my-skill').slick({
+$('.my-sill').slick({
     dots: false,
     infinite: true,
     autoplay: true,

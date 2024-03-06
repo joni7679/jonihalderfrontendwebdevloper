@@ -72,6 +72,11 @@ nav a {
     padding: 44px;
 }
 
+.home-section .flex{
+    width: 100%;
+    height: 100%;
+}
+
 .bannner-tittle {
     width: 320px;
 }
@@ -92,16 +97,14 @@ nav a {
     z-index: 888;
 }
 
-.graphic {
-    right: -11px;
+.wave{
     position: absolute;
-    width: 45%;
-    height: 100%;
-    background-color: var(--bg-sec-color);
-    z-index: 9;
-    /* top: -44px; */
+    bottom: -1px;
+    /* z-index: -3; */
 }
-
+.bannner-tittle{
+    z-index: 3;
+}
 .bannner-tittle span {
     color: var(--primary-color);
 }
@@ -202,8 +205,9 @@ nav a {
 /* skill section 
 */
 .skill {
-    width: 250px;
-    
+    width: 230px;
+    cursor: pointer;
+
 }
 
 .slick-active {
@@ -230,13 +234,26 @@ nav a {
 .my-skill {
     margin-top: 24px;
     padding: 30PX;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .skills-section {
     width: 100%;
-    height: 50vh;
+    height: 80vh;
     background-color: var(--bg-sec-color);
     padding: 15px 25px;
+}
+
+.skill {
+    /* border: 1px solid; */
+    text-align: center;
+    padding: 10px 45px;
+    border-radius: 9px;
+    margin-top: 10px;
+    /* background-color: #80bef5; */
 }
 
 .nav .active {
