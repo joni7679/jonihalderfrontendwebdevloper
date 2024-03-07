@@ -70,3 +70,20 @@ inputs.forEach((input) => {
     input.addEventListener("blur", blurFunc);
 });
 
+
+gsap.to("nav ul li a", {
+    duration: 2, // 2 seconds duration
+    delay: 1,    // 1 second delay before animation starts
+    y: 200,      // move 200 pixels along the y-axis
+    ease: "power2.inOut" // easing function
+  })
+
+  let portfolio = document.getElementById("portfolio");
+  portfolio.addEventListener("click",(event)=>{
+    console.log(event.target)
+
+    let currentimgpath = event.target.src;
+    console.log(currentimgpath)
+
+
+  })
