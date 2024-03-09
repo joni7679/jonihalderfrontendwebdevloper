@@ -68,13 +68,36 @@ inputBoxes.forEach(function (inputBox, index) {
     });
 });
 
+let tl = gsap.timeline()
 
-gsap.to("nav ul li a", {
-    duration: 2, // 2 seconds duration
-    delay: 1,    // 1 second delay before animation starts
-    y: 200,      // move 200 pixels along the y-axis
-    ease: "power2.inOut" // easing function
+tl.from("nav ul li ", {
+    y: -600,
+    opacity: 0,
+    duration: 1,
+    stagger: 0.3,
+});
+
+tl.from(".bannner-tittle", {
+    x: -700,
+    opacity: 0,
+    duration: 0.5,
 })
+
+
+tl.from(".about-left", {
+    x: -700, // Move 200 pixels horizontally
+    // rotation: 360, // Rotate 360 degrees
+    duration: 2, // Animation duration
+    scrollTrigger: {
+        trigger: ".about-left", // Element to be triggered
+        start: "top 50%", // Start trigger when top of trigger element hits the middle of the viewport
+        end: "bottom 50%", // End trigger when bottom of trigger element hits the middle of the viewport
+        scrub: true, // Smooth scrolling effect
+        markers: true // Adds markers for debugging
+    }
+});
+
+
 
 let portfolio = document.getElementById("portfolio");
 portfolio.addEventListener("click", (event) => {
