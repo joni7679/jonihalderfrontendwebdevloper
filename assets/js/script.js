@@ -51,23 +51,21 @@ closeBtn.addEventListener("click", () => {
 // });
 
 
-const inputs = document.querySelectorAll(".input");
+const inputBoxes = document.querySelectorAll('.inputbox');
+const placeholders = document.querySelectorAll('.placeholder');
+inputBoxes.forEach(function (inputBox, index) {
+    inputBox.addEventListener('focus', function () {
+        placeholders[index].classList.add('active');
+        inputBoxes[index].classList.add('inputactive');
+    });
 
-function focusFunc() {
-    let parent = this.parentNode;
-    parent.classList.add("focus");
-}
+    inputBox.addEventListener('blur', function () {
+        if (inputBox.value === '') {
+            placeholders[index].classList.remove('active');
+            inputBoxes[index].classList.remove('inputactive');
 
-function blurFunc() {
-    let parent = this.parentNode;
-    if (this.value == "") {
-        parent.classList.remove("focus");
-    }
-}
-
-inputs.forEach((input) => {
-    input.addEventListener("focus", focusFunc);
-    input.addEventListener("blur", blurFunc);
+        }
+    });
 });
 
 
@@ -76,14 +74,14 @@ gsap.to("nav ul li a", {
     delay: 1,    // 1 second delay before animation starts
     y: 200,      // move 200 pixels along the y-axis
     ease: "power2.inOut" // easing function
-  })
+})
 
-  let portfolio = document.getElementById("portfolio");
-  portfolio.addEventListener("click",(event)=>{
+let portfolio = document.getElementById("portfolio");
+portfolio.addEventListener("click", (event) => {
     console.log(event.target)
 
     let currentimgpath = event.target.src;
     console.log(currentimgpath)
 
 
-  })
+})
