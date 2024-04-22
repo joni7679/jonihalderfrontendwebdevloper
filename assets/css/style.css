@@ -14,12 +14,29 @@ html {
 }
 
 
+body {
+    overflow-x: hidden;
+}
+
+
 :root {
     --primary-color: #0189FF;
     --bg-color: #F8F9FD;
     --bg-sec-color: #ECF6FF;
+    --bg-thried-color: #fcfeff;
     --white: #fff;
     --gry-color: #746868;
+    --black: #000;
+}
+
+.dark-them {
+    --primary-color: #0189FF;
+    --bg-color: #121213;
+    --bg-thried-color: #2d2e2e;
+    --gry-color: #fcfcfc;
+    --black: #fff;
+    --bg-sec-color: #121213;
+
 }
 
 main {
@@ -58,7 +75,7 @@ nav a {
     margin-right: 25px;
     text-decoration: none;
     text-transform: capitalize;
-    color: #202021;
+    color:var(--black);
 
 }
 
@@ -70,6 +87,69 @@ nav a {
 #email-icon {
     color: var(--primary-color);
 }
+
+/* toggle icons */
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.box {
+    width: 125px;
+    height: 60px;
+    border-radius: 75px;
+    cursor: pointer;
+    background-color: rgb(14, 11, 11);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transition: all 1s ease;
+    /* Using the $time variable */
+    position: relative;
+}
+
+.ball {
+    width: 60px;
+    height: 60px;
+    background-color: rgb(204, 204, 196);
+    border-radius: 50%;
+    border: 3px solid black;
+    display: flex;
+    position: absolute;
+    left: 0;
+    border-radius: 50%;
+    border: 3px solid black;
+    transition: all 0.4s;
+    z-index: 9;
+}
+
+.scenary {
+    width: 100%;
+    height: 100%;
+    padding: 0 7px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.scenary .moon,
+.scenary .sun {
+    width: 40px;
+}
+
+.scenary .moon img,
+.scenary .sun img {
+    width: 100%;
+    z-index: 99;
+}
+
+
+.active-toggle {
+    transform: translateX(100%);
+    transition: all 0.4s;
+}
+
+
 
 .home-section {
     width: 100%;
@@ -84,13 +164,15 @@ nav a {
 }
 
 .bannner-tittle {
-    width: 320px;
+    width: 50vw;
+}
+
+.bannner-tittle H2 ,.bannner-tittle h1 {
+    color: var(--black);
 }
 
 .devloper-img {
-    width: 70%;
-    height: 100%;
-    /* background-color: red; */
+    width: 50%;
     position: relative;
 }
 
@@ -103,20 +185,8 @@ nav a {
     object-fit: cover;
 }
 
-.devloper-img img {
-    height: 76%;
-    /* top: 139px; */
-    /* left: 6px; */
-    position: absolute;
-    /* right: 5px; */
-    z-index: 888;
-}
 
-.wave {
-    position: absolute;
-    bottom: -1px;
-    /* z-index: -3; */
-}
+
 
 .bannner-tittle {
     z-index: 3;
@@ -128,8 +198,7 @@ nav a {
 
 .bannner-tittle p {
     margin: 21px 5px;
-    width: 300px;
-    /* background-color: green; */
+    color: var(--gry-color);
 }
 
 .btn {
@@ -150,15 +219,16 @@ nav a {
 
 .primary-btn:hover {
     background-color: transparent;
-    border: 1px solid gray;
-    color: #000;
+    border: 1px solid var(--gry-color);
+    color: var(--black);
     transition: all 0.4s ease;
 
 }
 
 .cv-btn {
     background-color: transparent;
-    border: 1px solid gray;
+    border: 1px solid var(--gry-color);
+    color: var(--black);
     transition: all 0.4s ease;
 
 }
@@ -174,7 +244,7 @@ nav a {
 .about-section {
     width: 100%;
     height: 100vh;
-    background-color: var(--white);
+    background-color: var(--bg-thried-color);
     padding: 13px 35px;
 }
 
@@ -195,6 +265,10 @@ nav a {
 
 .about-left {
     width: 50%;
+}
+
+.about-right ul li{
+    color: var(--black);
 }
 
 .about-right ul li span,
@@ -281,6 +355,7 @@ nav a {
 .portfolio-section {
     padding: 35px;
     position: relative;
+    background-color: var(--bg-thried-color);
 }
 
 .project-box {
@@ -537,7 +612,7 @@ nav a {
 }
 
 .contact-section {
-    background: #FAFAFA;
+    background: var(--bg-thried-color);
     padding: 44px 24px;
 }
 
@@ -573,7 +648,7 @@ form {
     position: absolute;
     top: 10px;
     left: 10px;
-    color: #666;
+    color: var(--gry-color);
     transition: 0.3s;
     pointer-events: none;
 }
@@ -673,7 +748,10 @@ form {
 
 @media (max-width:800px) {
 
-    .home-section,
+    .home-section .flex {
+        flex-direction: column-reverse;
+    }
+
     .about-section .flex {
         flex-direction: column;
     }

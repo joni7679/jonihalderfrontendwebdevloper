@@ -1,3 +1,8 @@
+
+
+
+
+
 //res
 let hamburgerBtn = document.getElementById("menu-btn");
 hamburgerBtn.addEventListener("click", () => {
@@ -9,6 +14,51 @@ closeBtn.addEventListener("click", () => {
     document.querySelector("nav").style.right = "200%"
 
 })
+
+
+// darkmod and light mode
+
+let check = document.querySelector("#check");
+let box = document.querySelector(".box");
+let ball = document.querySelector(".ball");
+localStorage.setItem("theme", "light");
+let localData = localStorage.getItem("theme");
+
+
+
+if (localStorage.getItem("theme") == null) {
+    localStorage.setItem("theme", "light")
+}
+if (localData == "light") {
+    document.body.classList.remove("dark-them"); // Removed extra space
+
+}
+
+else if (localData == "light") {
+    document.body.classList.add("dark-them"); // Removed extra space
+
+}
+
+
+check.addEventListener("change", () => {
+    if (check.checked == true) {
+        box.setAttribute("style", "background-color:white");
+        ball.classList.add("active-toggle");
+        document.body.classList.add("dark-them"); // Removed extra space
+        localStorage.setItem("theme", "dark")
+
+    } else {
+        box.setAttribute("style", "background-color:black");
+        ball.classList.remove("active-toggle");
+        document.body.classList.remove("dark-light");
+        localStorage.setItem("theme", "light")
+
+    }
+});
+
+
+
+
 
 
 
@@ -102,9 +152,10 @@ tl.from(".about-left", {
 let portfolio = document.getElementById("portfolio");
 portfolio.addEventListener("click", (event) => {
     console.log(event.target)
-
     let currentimgpath = event.target.src;
     console.log(currentimgpath)
 
 
 })
+
+

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            padding: 10%;
+        }
+
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        .box {
+            width: 125px;
+            height: 60px;
+            border-radius: 75px;
+            cursor: pointer;
+            background-color: rgb(14, 11, 11);
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            transition: all 1s ease;
+            /* Using the $time variable */
+            position: relative;
+        }
+
+        .ball {
+            width: 60px;
+            height: 60px;
+            background-color: rgb(204, 204, 196);
+            border-radius: 50%;
+            border: 3px solid black;
+            display: flex;
+            position: absolute;
+            left: 0;
+            border-radius: 50%;
+            border: 3px solid black;
+            transition: all 0.4s;
+            z-index: 9;
+        }
+
+        .scenary {
+            width: 100%;
+            height: 100%;
+            padding: 0 7px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .scenary .moon,
+        .scenary .sun {
+            width: 40px;
+        }
+
+        .scenary .moon img,
+        .scenary .sun img {
+            width: 100%;
+            z-index: 99;
+        }
+
+
+        .active-toggle {
+            transform: translateX(100%);
+            transition: all 0.4s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="btn">
+            <input type="checkbox" name="" id="check">
+            <label for="check">
+                <div class="box">
+                    <div class="ball">
+                    </div>
+                    <div class="scenary">
+                        <div class="moon">
+                            <img src="./assets/images/crescent-moon.png" alt="">
+                        </div>
+                        <div class="sun">
+                            <img src="./assets/images/sun.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </label>
+        </div>
+
+        <div class="content">
+            <h1>day and night them</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam excepturi aspernatur neque, minima similique
+                quo
+                voluptas veniam repellendus facilis commodi, id necessitatibus ab illum? Odit ex excepturi, numquam
+                necessitatibus tenetur laboriosam cupiditate? Sapiente, ipsam! Iusto atque maiores numquam voluptas
+                expedita
+                odit ullam distinctio et possimus!</p>
+
+        </div>
+    </div>
+
+
+
+
+    <script>
+        //         let check = document.querySelector("#check");
+        //         let box = document.querySelector(".box");
+        //         let ball = document.querySelector(".ball");
+
+
+        //         check.addEventListener("change",()=>{
+        //       if (this.check.checked == true)
+        //                 ball.setAttribute("style", 'transform:translateX(100%);')
+        //         }
+
+
+        //                 else if (this.check.checked == false) {
+        //             ball.setAttribute("style", 'transform:translateX(0%);')
+
+        //         }
+        //    })
+
+        let check = document.querySelector("#check");
+        let box = document.querySelector(".box");
+        let ball = document.querySelector(".ball");
+
+        check.addEventListener("change", () => {
+            if (check.checked == true) {
+                box.setAttribute("style", "background-color:white")
+                document.body.style.backgroundColor="black";
+                document.body.style.color="white";
+
+                ball.classList.add("active-toggle")
+            } else {
+                box.setAttribute("style", "background-color:black")
+                document.body.style.backgroundColor="white";
+                document.body.style.color="black"
+
+                ball.classList.remove("active-toggle")
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>
