@@ -24,37 +24,30 @@ let ball = document.querySelector(".ball");
 localStorage.setItem("theme", "light");
 let localData = localStorage.getItem("theme");
 
-
-
 if (localStorage.getItem("theme") == null) {
-    localStorage.setItem("theme", "light")
+    localStorage.setItem("theme", "light");
 }
+
 if (localData == "light") {
-    document.body.classList.remove("dark-them"); // Removed extra space
-
+    document.body.classList.remove("dark-theme"); // Corrected class name
+} else if (localData == "dark") { // Corrected to check for "dark"
+    document.body.classList.add("dark-theme"); // Corrected class name
 }
-
-else if (localData == "light") {
-    document.body.classList.add("dark-them"); // Removed extra space
-
-}
-
 
 check.addEventListener("change", () => {
     if (check.checked == true) {
         box.setAttribute("style", "background-color:white");
         ball.classList.add("active-toggle");
-        document.body.classList.add("dark-them"); // Removed extra space
-        localStorage.setItem("theme", "dark")
-
+        document.body.classList.add("dark-theme");
+        localStorage.setItem("theme", "dark");
     } else {
         box.setAttribute("style", "background-color:black");
         ball.classList.remove("active-toggle");
-        document.body.classList.remove("dark-light");
-        localStorage.setItem("theme", "light")
-
+        document.body.classList.remove("dark-theme");
+        localStorage.setItem("theme", "light");
     }
 });
+
 
 
 
