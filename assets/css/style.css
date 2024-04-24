@@ -75,7 +75,7 @@ nav a {
     margin-right: 25px;
     text-decoration: none;
     text-transform: capitalize;
-    color:var(--black);
+    color: var(--black);
 
 }
 
@@ -120,7 +120,7 @@ input[type="checkbox"] {
     border-radius: 50%;
     border: 3px solid black;
     transition: all 0.4s;
-    z-index: 9;
+    z-index: 3;
 }
 
 .scenary {
@@ -135,6 +135,7 @@ input[type="checkbox"] {
 .scenary .moon,
 .scenary .sun {
     width: 40px;
+    z-index: 3;
 }
 
 .scenary .moon img,
@@ -153,7 +154,7 @@ input[type="checkbox"] {
 
 .home-section {
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
     background-color: var(--bg-color);
     padding: 44px;
 }
@@ -167,7 +168,8 @@ input[type="checkbox"] {
     width: 50vw;
 }
 
-.bannner-tittle H2 ,.bannner-tittle h1 {
+.bannner-tittle H2,
+.bannner-tittle h1 {
     color: var(--black);
 }
 
@@ -267,7 +269,7 @@ input[type="checkbox"] {
     width: 50%;
 }
 
-.about-right ul li{
+.about-right ul li {
     color: var(--black);
 }
 
@@ -465,6 +467,18 @@ input[type="checkbox"] {
     background-color: #0056b3;
 }
 
+
+.project-showbox {
+    width: 100%;
+    height: 300px;
+    background-color: red;
+}
+
+.project-showbox img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
 
 /* conactpage */
 
@@ -770,6 +784,21 @@ form {
     .bannner-tittle {
         margin-top: 70px !important;
     }
+}
+
+@media (max-width:500px) {
+    .home-section .flex {
+        justify-content: flex-end;
+    }
+
+    .banner-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 8px;
+    }
+
 }
 
 @media (max-width:550px) {

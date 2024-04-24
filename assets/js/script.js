@@ -1,5 +1,29 @@
 
+function locoAnimation() {
+    gsap.registerPlugin(ScrollTrigger);
+    const locoScroll = new LocomotiveScroll({
+        el: document.querySelector(".main"),
+        smooth: true
+    });
+    locoScroll.on("scroll", ScrollTrigger.update);
 
+    ScrollTrigger.scrollerProxy(".main", {
+        scrollTop(value) {
+            return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+        },
+        getBoundingClientRect() {
+            return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+        },
+        pinType: document.querySelector(".main").style.transform ? "transform" : "fixed"
+    });
+
+    ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+    ScrollTrigger.refresh();
+
+
+}
+
+locoAnimation()
 
 
 
@@ -17,81 +41,49 @@ closeBtn.addEventListener("click", () => {
 
 
 // darkmod and light mode
-
 let check = document.querySelector("#check");
 let box = document.querySelector(".box");
 let ball = document.querySelector(".ball");
-localStorage.setItem("theme", "light");
-let localData = localStorage.getItem("theme");
 
-if (localStorage.getItem("theme") == null) {
+// Set default theme if not already set
+if (!localStorage.getItem("theme")) {
     localStorage.setItem("theme", "light");
 }
 
-if (localData == "light") {
-    document.body.classList.remove("dark-theme"); // Corrected class name
-} else if (localData == "dark") { // Corrected to check for "dark"
-    document.body.classList.add("dark-theme"); // Corrected class name
-}
+// Function to set theme based on data in localStorage
+// function setTheme() {
+//     let theme = localStorage.getItem("theme");
+//     if (theme === "dark") {
+//         document.body.classList.add("dark-theme");
+//         check.checked = true;
+//         box.setAttribute("style", "background-color:black");
+//         ball.classList.add("active-toggle");
+//     } else {
+//         document.body.classList.remove("dark-theme");
+//         check.checked = false;
+//         box.setAttribute("style", "background-color:white");
+//         ball.classList.remove("active-toggle");
+//     }
+// }
 
+// // Initial call to set the theme when the page loads
+// setTheme();
+
+// Event listener for theme toggle
 check.addEventListener("change", () => {
-    if (check.checked == true) {
-        box.setAttribute("style", "background-color:white");
-        ball.classList.add("active-toggle");
+    if (check.checked) {
         document.body.classList.add("dark-theme");
-        localStorage.setItem("theme", "dark");
-    } else {
+        // localStorage.setItem("theme", "dark");
         box.setAttribute("style", "background-color:black");
-        ball.classList.remove("active-toggle");
+        ball.classList.add("active-toggle");
+    } else {
         document.body.classList.remove("dark-theme");
-        localStorage.setItem("theme", "light");
+        // localStorage.setItem("theme", "light");
+        box.setAttribute("style", "background-color:white");
+        ball.classList.remove("active-toggle");
     }
 });
 
-
-
-
-
-
-
-
-// $('.my-sill').slick({
-//     dots: false,
-//     infinite: true,
-//     autoplay: true,
-//     speed: 300,
-//     slidesToShow: 4,
-//     slidesToScroll: 1,
-//     arrows: false,
-//     responsive: [
-//         {
-//             breakpoint: 1024,
-//             settings: {
-//                 slidesToShow: 3,
-//                 slidesToScroll: 3,
-//                 infinite: true,
-//                 dots: false
-//             }
-//         },
-//         {
-//             breakpoint: 600,
-//             settings: {
-//                 slidesToShow: 2,
-//                 slidesToScroll: 1
-//             }
-//         },
-//         {
-//             breakpoint: 480,
-//             settings: {
-//                 slidesToShow: 2,
-//                 slidesToScroll: 1
-//             }
-//         }
-//         // You can unslick at a given breakpoint now by adding:
-//         // settings: "unslick"
-//         // instead of a settings object
-//     ]
-// });
 
 
 const inputBoxes = document.querySelectorAll('.inputbox');
@@ -110,6 +102,8 @@ inputBoxes.forEach(function (inputBox, index) {
         }
     });
 });
+
+
 
 let tl = gsap.timeline()
 
@@ -151,4 +145,20 @@ portfolio.addEventListener("click", (event) => {
 
 })
 
+tl.from(".project", {
+    y: 120,
+    duration: 0.2,
+    stagger: 0.2,
 
+    scrollTrigger: {
+        trigger: ".portfolio-section", // Element to be triggered
+        start: "top 50%", // Start trigger when top of trigger element hits the middle of the viewport
+        end: "bottom 50%", // End trigger when bottom of trigger element hits the middle of the viewport
+        scrub: true, // Smooth scrolling effect
+        markers: true // Adds markers for debugging
+    }
+
+
+
+
+})
