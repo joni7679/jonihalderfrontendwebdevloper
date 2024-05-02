@@ -23,21 +23,11 @@ function locoAnimation() {
 
 }
 
-locoAnimation()
+// locoAnimation()
 
 
 
-//res
-let hamburgerBtn = document.getElementById("menu-btn");
-hamburgerBtn.addEventListener("click", () => {
-    document.querySelector("nav").style.right = "50%"
-})
 
-let closeBtn = document.getElementById("close-btn");
-closeBtn.addEventListener("click", () => {
-    document.querySelector("nav").style.right = "200%"
-
-})
 
 
 // darkmod and light mode
@@ -70,22 +60,48 @@ if (!localStorage.getItem("theme")) {
 // setTheme();
 
 // Event listener for theme toggle
-check.addEventListener("change", () => {
-    if (check.checked) {
-        document.body.classList.add("dark-theme");
-        // localStorage.setItem("theme", "dark");
-        box.setAttribute("style", "background-color:black");
-        ball.classList.add("active-toggle");
-    } else {
-        document.body.classList.remove("dark-theme");
-        // localStorage.setItem("theme", "light");
-        box.setAttribute("style", "background-color:white");
-        ball.classList.remove("active-toggle");
-    }
+// check.addEventListener("change", () => {
+//     if (check.checked) {
+//         document.body.classList.add("dark-theme");
+//         // localStorage.setItem("theme", "dark");
+//         box.setAttribute("style", "background-color:black");
+//         ball.classList.add("active-toggle");
+//     } else {
+//         document.body.classList.remove("dark-theme");
+//         // localStorage.setItem("theme", "light");
+//         box.setAttribute("style", "background-color:white");
+//         ball.classList.remove("active-toggle");
+//     }
+// });
+
+
+
+var getHubergerIcon = document.getElementById("hamburger-menu");
+var getHubergerCrossIcon = document.getElementById("hamburger-cross");
+var getMobileMenu = document.getElementById("mobile-menu");
+
+getHubergerIcon.addEventListener("click", function () {
+    console.log("hello");
+    getMobileMenu.style.display = "flex";
+    setTimeout(function () {
+        getMobileMenu.style.transform = "translateX(0%)"; // Slide in the menu
+    }, 50); // Add a small delay for better transition effect
 });
 
+getHubergerCrossIcon.addEventListener("click", function () {
+    console.log("hello");
+    getMobileMenu.style.transform = "translateX(-100%)"; // Slide out the menu
+    setTimeout(function () {
+        getMobileMenu.style.display = "none";
+    }, 300); // Wait for the transition to end before hiding
+});
 
-
+// Check if screen size changes to desktop view and hide mobile menu
+window.addEventListener("resize", function () {
+    if (window.innerWidth > 770) {
+        getMobileMenu.style.display = "none";
+    }
+});
 const inputBoxes = document.querySelectorAll('.inputbox');
 const placeholders = document.querySelectorAll('.placeholder');
 inputBoxes.forEach(function (inputBox, index) {
@@ -121,18 +137,18 @@ tl.from(".bannner-tittle", {
 })
 
 
-tl.from(".about-left", {
-    x: -700, // Move 200 pixels horizontally
-    // rotation: 360, // Rotate 360 degrees
-    duration: 2, // Animation duration
-    scrollTrigger: {
-        trigger: ".about-left", // Element to be triggered
-        start: "top 50%", // Start trigger when top of trigger element hits the middle of the viewport
-        end: "bottom 50%", // End trigger when bottom of trigger element hits the middle of the viewport
-        scrub: true, // Smooth scrolling effect
-        markers: true // Adds markers for debugging
-    }
-});
+// tl.from(".about-left", {
+//     x: -700, // Move 200 pixels horizontally
+//     // rotation: 360, // Rotate 360 degrees
+//     duration: 2, // Animation duration
+//     scrollTrigger: {
+//         trigger: ".about-left", // Element to be triggered
+//         start: "top 50%", // Start trigger when top of trigger element hits the middle of the viewport
+//         end: "bottom 50%", // End trigger when bottom of trigger element hits the middle of the viewport
+//         scrub: true, // Smooth scrolling effect
+//         // markers: true // Adds markers for debugging
+//     }
+// });
 
 
 
@@ -145,20 +161,32 @@ portfolio.addEventListener("click", (event) => {
 
 })
 
+
 tl.from(".project", {
-    y: 120,
-    duration: 0.2,
+    opacity: 0,
+    y: 100,
+    duration: 1,
     stagger: 0.2,
-
     scrollTrigger: {
-        trigger: ".portfolio-section", // Element to be triggered
-        start: "top 50%", // Start trigger when top of trigger element hits the middle of the viewport
-        end: "bottom 50%", // End trigger when bottom of trigger element hits the middle of the viewport
-        scrub: true, // Smooth scrolling effect
-        markers: true // Adds markers for debugging
+        trigger: ".portfolio-section",
+        scroller: "body",
+        start: "top top",
+        end: "bottom 80%",
+        scrub: 2,
+        // markers: true,
     }
+});
 
 
 
 
-})
+
+let mainContainer = document.querySelector(".cricle");
+let skills = document.querySelectorAll(".sec");
+
+skills.forEach((skill, index) => {
+    skill.addEventListener("click", () => {
+        let mainRotation = -index * 50; // Calculate the rotation angle for the main container
+        gsap.to(mainContainer, { rotate: mainRotation, duration: 0.5 }); // Smoothly rotate the 
+    });
+});
