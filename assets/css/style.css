@@ -46,7 +46,7 @@ body {
 
 main {
     text-transform: capitalize;
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
     /* font-family: grilro; */
 
 
@@ -61,22 +61,6 @@ main {
     text-align: center;
     font-size: 3vw;
     padding: 10px;
-}
-
-ul {
-    list-style: none;
-}
-
-#menu-btn {
-    cursor: pointer;
-    display: none;
-}
-
-
-
-#close-btn {
-    cursor: pointer;
-    display: none;
 }
 
 #email-icon {
