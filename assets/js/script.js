@@ -1,29 +1,4 @@
 
-function locoAnimation() {
-    gsap.registerPlugin(ScrollTrigger);
-    const locoScroll = new LocomotiveScroll({
-        el: document.querySelector(".main"),
-        smooth: true
-    });
-    locoScroll.on("scroll", ScrollTrigger.update);
-
-    ScrollTrigger.scrollerProxy(".main", {
-        scrollTop(value) {
-            return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
-        },
-        getBoundingClientRect() {
-            return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
-        },
-        pinType: document.querySelector(".main").style.transform ? "transform" : "fixed"
-    });
-
-    ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-    ScrollTrigger.refresh();
-
-
-}
-
-// locoAnimation()
 
 
 
@@ -96,28 +71,6 @@ getHubergerCrossIcon.addEventListener("click", function () {
     }, 300); // Wait for the transition to end before hiding
 });
 
-// Check if screen size changes to desktop view and hide mobile menu
-window.addEventListener("resize", function () {
-    if (window.innerWidth > 770) {
-        getMobileMenu.style.display = "none";
-    }
-});
-const inputBoxes = document.querySelectorAll('.inputbox');
-const placeholders = document.querySelectorAll('.placeholder');
-inputBoxes.forEach(function (inputBox, index) {
-    inputBox.addEventListener('focus', function () {
-        placeholders[index].classList.add('active');
-        inputBoxes[index].classList.add('inputactive');
-    });
-
-    inputBox.addEventListener('blur', function () {
-        if (inputBox.value === '') {
-            placeholders[index].classList.remove('active');
-            inputBoxes[index].classList.remove('inputactive');
-
-        }
-    });
-});
 
 
 
@@ -136,6 +89,46 @@ tl.from(".bannner-tittle", {
     duration: 0.5,
 })
 
+tl.from(".devloper-img", {
+    opacity: 0,
+    scale: 0,
+    duration: 0.5,
+
+})
+
+
+
+// tl.from(".primary-color", {
+// y:100,
+// opener:0,
+// scrollTrigger:{
+//     trigger:".portfolio-section",
+//     scroller:"body",
+//     markers: true,
+//     start: "top top",
+//     end: "bottom 50%",
+//     scrub: 3,
+// }
+// })
+
+tl.from(".line span", 1.8, {
+    y: 100,
+    ease: "power4.out",
+    // delay: 1,
+    // skewY: 7,
+    scrollTrigger: {
+        trigger: ".line",
+        scroller: "body",
+        // markers: true,
+        start: "50% 50%",
+        end: "bottom 50%",
+        scrub: 3,
+    },
+    stagger: {
+        amount: 0.3
+    },
+})
+
 
 // tl.from(".about-left", {
 //     x: -700, // Move 200 pixels horizontally
@@ -151,32 +144,65 @@ tl.from(".bannner-tittle", {
 // });
 
 
+// function skillHeadingFunction() {
+//     let text = '';
+//     let skillHeading = document.querySelector(".skill-heading-text");
+//     skillHeading.textContent.split("").forEach((e) => {
+//         text += `<span>${e}</span>`;
+//     })
+//     skillHeading.innerHTML = text;
+//     let tl = gsap.timeline();
+//     tl.from(".skill-heading-text span", {
+//         y: 100,
+//         opacity: 0,
+//         duration: 0.1,
+//         scrollTrigger: {
+//             trigger: ".skill-heading-text", // Corrected selector
+//             scroller: 'body',
+//             start: "top 70%%",
+//             end: "bottom 90%",
+//             scrub: 2,
+//             markers: true,
+//         },
+//         stagger: 0.2, // Adding stagger effect
+//     })
+// }
+
+// skillHeadingFunction();
+
+// 
+
+
+
 
 let portfolio = document.getElementById("portfolio");
 portfolio.addEventListener("click", (event) => {
     console.log(event.target)
     let currentimgpath = event.target.src;
     console.log(currentimgpath)
-
-
 })
 
 
-tl.from(".project", {
-    opacity: 0,
-    y: 100,
-    duration: 1,
-    stagger: 0.2,
-    scrollTrigger: {
-        trigger: ".portfolio-section",
-        scroller: "body",
-        start: "top top",
-        end: "bottom 80%",
-        scrub: 2,
-        // markers: true,
-    }
-});
 
+function projectShowCaseAni() {
+    tl.from(".project", {
+        opacity: 0,
+        y: 100,
+        duration: 1,
+        stagger: 0.2,
+        scrollTrigger: {
+            trigger: ".portfolio-section",
+            scroller: "body",
+            start: "top top",
+            end: "bottom 80%",
+            scrub: 2,
+            // markers: true,
+        }
+    });
+
+}
+
+projectShowCaseAni()
 
 
 
