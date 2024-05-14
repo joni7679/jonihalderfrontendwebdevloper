@@ -38,7 +38,7 @@
             </div>
             <div class="right-part">
                 <div id="hamburger-menu">&#9776;</div>
-                <!-- 
+                
                 <div class="box">
                     <div class="ball"></div>
                     <div class="scenary">
@@ -49,7 +49,7 @@
                             <img src="./assets/images/sun.png" alt="">
                         </div>
                     </div>
-                </div> -->
+                </div>
             </div>
 
         </div>
@@ -273,14 +273,14 @@
             <h2 class="primary-color">my project</h2>
             <div class="filter-section">
                 <ul>
-                    <li data-filter="all" class="active">All</li>
-                    <li data-filter="camera">gsap</li>
-                    <li data-filter="headphone">tailwind-css</li>
-                    <li data-filter="mobile">bostrap-5</li>
-                    <li data-filter="shoe">e-comarce</li>
+                    <li data-filter="all" class="active" data-filter="all">All</li>
+                    <li data-filter="camera" data-filter="gsap">gsap</li>
+                    <li data-filter="headphone" data-filter="tailwind-css">tailwind-css</li>
+                    <li data-filter="mobile" data-filter="bostrap-5">bostrap-5</li>
+                    <li data-filter="shoe" data-filter="e-comarce">e-comarce</li>
                 </ul>
                 <div class="portfolio">
-                    <div class="project">
+                    <div class="project"  data-filter="gsap">
                         <div class="project-showbox">
                             <img src="./assets/work/grocery-store.png" alt="">
                         </div>
@@ -297,7 +297,7 @@
                         </div>
                     </div>
 
-                    <div class="project">
+                    <div class="project"  data-filter="tailwind-css">
                         <div class="project-showbox">
                             <img src="./assets/work/netfix-clone.png" alt="">
                         </div>
@@ -314,7 +314,24 @@
                     </div>
 
 
-                    <div class="project">
+                    <div class="project" data-filter="bostrap-5">
+                        <div class="project-showbox">
+                            <img src="./assets/work/spotify-clone.png" alt="">
+                        </div>
+                        <!-- <div class="project-content">
+                        <h3 class="project-title">Project 2</h3>
+                        <p class="project-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div> -->
+                        <div class="overlay" >
+                            <div class="overlay-content">
+                                <a href=""><i class="ri-add-line"></i></a>
+                                <a href="https://joni7679.github.io/blob_site/"><i class="ri-links-fill"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="project" >
                         <div class="project-showbox">
                             <img src="./assets/work/spotify-clone.png" alt="">
                         </div>
@@ -330,24 +347,7 @@
                         </div>
                     </div>
 
-
-                    <div class="project">
-                        <div class="project-showbox">
-                            <img src="./assets/work/spotify-clone.png" alt="">
-                        </div>
-                        <!-- <div class="project-content">
-                        <h3 class="project-title">Project 2</h3>
-                        <p class="project-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div> -->
-                        <div class="overlay">
-                            <div class="overlay-content">
-                                <a href=""><i class="ri-add-line"></i></a>
-                                <a href="https://joni7679.github.io/blob_site/"><i class="ri-links-fill"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project">
+                    <div class="project" data-filter="e-comarce">
                         <div class="project-showbox">
                             <img src="./assets/work/screencapture-joni7679-signifo-clone.png" alt="">
 
@@ -364,7 +364,7 @@
                         </div>
                     </div>
 
-                    <div class="project">
+                    <div class="project" data-filter="e-comarce">
                         <div class="project-showbox">
                             <img src="./assets/work/LAZAREV.png" alt="">
 

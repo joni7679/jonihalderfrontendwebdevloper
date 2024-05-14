@@ -175,13 +175,6 @@ tl.from(".line span", 1.8, {
 
 
 
-let portfolio = document.getElementById("portfolio");
-portfolio.addEventListener("click", (event) => {
-    console.log(event.target)
-    let currentimgpath = event.target.src;
-    console.log(currentimgpath)
-})
-
 
 
 function projectShowCaseAni() {
@@ -203,6 +196,36 @@ function projectShowCaseAni() {
 }
 
 projectShowCaseAni()
+
+const items = document.querySelectorAll("ul li");
+const projectSce = document.querySelectorAll(".portfolio .project");
+
+items.forEach((item) => {
+    item.addEventListener("click", () => {
+        // Remove active class from all items
+        items.forEach((menuItem) => {
+            menuItem.classList.remove("active");
+        });
+        item.classList.add("active");
+
+        // // Filter
+        // const valueAttr = item.getAttribute("data-filter");
+        // projectSce.forEach((projectItem) => {
+        //     projectItem.classList.add("hide"); // Hide all projects by default
+        //     if (
+        //         projectItem.getAttribute("data-filter").toLowerCase() ==
+        //         valueAttr.toLowerCase() ||
+        //         valueAttr == "all"
+        //     ) {
+        //         projectItem.classList.remove("hide");
+        //     }
+        // });
+    });
+});
+
+
+
+
 
 
 

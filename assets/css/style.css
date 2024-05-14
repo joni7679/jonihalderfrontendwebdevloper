@@ -13,7 +13,8 @@
     padding: 0;
     box-sizing: border-box;
 }
-a{
+
+a {
     text-decoration: none;
 }
 
@@ -89,7 +90,12 @@ input[type="checkbox"] {
     /* Using the $time variable */
     position: relative;
 }
-
+.right-part{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
 .ball {
     width: 60px;
     height: 60px;
@@ -231,7 +237,7 @@ input[type="checkbox"] {
 /* ====about-section===== */
 .about-section {
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
     background-color: var(--bg-thried-color);
     /* background-color: red; */
     padding: 13px 35px;
@@ -517,6 +523,10 @@ input[type="checkbox"] {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s ease;
+}
+
+.project.hide {
+    display: none;
 }
 
 .project:hover {
@@ -816,7 +826,7 @@ form {
     }
 
     .skills-section {
-        margin-top: 290px;
+        /* margin-top: 290px; */
     }
 }
 
