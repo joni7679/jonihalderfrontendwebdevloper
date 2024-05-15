@@ -9,11 +9,19 @@
 let check = document.querySelector("#check");
 let box = document.querySelector(".box");
 let ball = document.querySelector(".ball");
+check.addEventListener("change", () => {
+    if (check.checked) {
+        ball.classList.add("active-toggle");
+    } else {
+        ball.classList.remove("active-toggle");
+    }
+});
 
-// Set default theme if not already set
-if (!localStorage.getItem("theme")) {
-    localStorage.setItem("theme", "light");
-}
+
+// // Set default theme if not already set
+// if (!localStorage.getItem("theme")) {
+//     localStorage.setItem("theme", "light");
+// }
 
 // Function to set theme based on data in localStorage
 // function setTheme() {
@@ -239,3 +247,6 @@ skills.forEach((skill, index) => {
         gsap.to(mainContainer, { rotate: mainRotation, duration: 0.5 }); // Smoothly rotate the 
     });
 });
+
+var validator = $( "#contact-form" ).validate();
+validator.form();

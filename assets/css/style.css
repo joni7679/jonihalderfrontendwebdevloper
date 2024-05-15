@@ -82,7 +82,7 @@ input[type="checkbox"] {
     height: 60px;
     border-radius: 75px;
     cursor: pointer;
-    background-color: rgb(14, 11, 11);
+    background-color: #4ecfff;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -99,14 +99,14 @@ input[type="checkbox"] {
 .ball {
     width: 60px;
     height: 60px;
-    background-color: rgb(204, 204, 196);
+    background-color: #1E52A7;
     border-radius: 50%;
-    border: 3px solid black;
+    /* border: 3px solid black; */
     display: flex;
     position: absolute;
     left: 0;
     border-radius: 50%;
-    border: 3px solid black;
+
     transition: all 0.4s;
     z-index: 3;
 }
@@ -120,16 +120,16 @@ input[type="checkbox"] {
     justify-content: space-between;
 }
 
-.scenary .moon,
-.scenary .sun {
-    width: 40px;
-    z-index: 3;
+.moon,
+.sun {
+    position: absolute;
+    top: 0;
 }
 
-.scenary .moon img,
-.scenary .sun img {
-    width: 100%;
-    z-index: 99;
+.moon img,
+.sun img {
+    width: 50px; /* adjust as needed */
+    height: auto;
 }
 
 
@@ -325,7 +325,7 @@ input[type="checkbox"] {
     /* border: 1px solid gray; */
     border-radius: 50%;
     position: absolute;
-    top: 95%;
+    /* top: 95%; */
     left: 50%;
     transform: translate(-50%, -50%);
 
