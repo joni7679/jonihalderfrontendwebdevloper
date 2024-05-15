@@ -1,92 +1,76 @@
 
-
-
-
-
-
-
 // darkmod and light mode
-let check = document.querySelector("#check");
-let box = document.querySelector(".box");
-let ball = document.querySelector(".ball");
-check.addEventListener("change", () => {
-    if (check.checked) {
-        ball.classList.add("active-toggle");
-    } else {
-        ball.classList.remove("active-toggle");
-    }
-});
+function darkTheme() {
 
+    document.addEventListener("DOMContentLoaded", () => {
+        const check = document.querySelector("#check");
+        const ball = document.querySelector(".ball");
+        const body = document.body;
 
-// // Set default theme if not already set
-// if (!localStorage.getItem("theme")) {
-//     localStorage.setItem("theme", "light");
-// }
+        // Function to apply theme
+        const applyTheme = (theme) => {
+            if (theme === "dark") {
+                document.body.classList.add("dark-theme");
+                check.checked = true;
+            } else {
+                document.body.classList.remove("dark-theme");
+                check.checked = false;
+            }
+        };
 
-// Function to set theme based on data in localStorage
-// function setTheme() {
-//     let theme = localStorage.getItem("theme");
-//     if (theme === "dark") {
-//         document.body.classList.add("dark-theme");
-//         check.checked = true;
-//         box.setAttribute("style", "background-color:black");
-//         ball.classList.add("active-toggle");
-//     } else {
-//         document.body.classList.remove("dark-theme");
-//         check.checked = false;
-//         box.setAttribute("style", "background-color:white");
-//         ball.classList.remove("active-toggle");
-//     }
-// }
+        // Get theme from localStorage and apply it
+        const savedTheme = localStorage.getItem("theme");
+        applyTheme(savedTheme);
 
-// // Initial call to set the theme when the page loads
-// setTheme();
+        // Event listener for checkbox change
+        check.addEventListener("change", () => {
+            if (check.checked) {
+                ball.classList.add("active-toggle");
+                localStorage.setItem("theme", "dark");
+                applyTheme("dark");
+            } else {
+                ball.classList.remove("active-toggle");
+                localStorage.setItem("theme", "light");
+                applyTheme("light");
+            }
+        });
+    });
+}
 
-// Event listener for theme toggle
-// check.addEventListener("change", () => {
-//     if (check.checked) {
-//         document.body.classList.add("dark-theme");
-//         // localStorage.setItem("theme", "dark");
-//         box.setAttribute("style", "background-color:black");
-//         ball.classList.add("active-toggle");
-//     } else {
-//         document.body.classList.remove("dark-theme");
-//         // localStorage.setItem("theme", "light");
-//         box.setAttribute("style", "background-color:white");
-//         ball.classList.remove("active-toggle");
-//     }
-// });
+darkTheme()
 
+function hamburger() {
+    var getHubergerIcon = document.getElementById("hamburger-menu");
+    var getHubergerCrossIcon = document.getElementById("hamburger-cross");
+    var getMobileMenu = document.getElementById("mobile-menu");
 
+    getHubergerIcon.addEventListener("click", function () {
+        console.log("hello");
+        getMobileMenu.style.display = "flex";
+        setTimeout(function () {
+            getMobileMenu.style.transform = "translateX(0%)"; // Slide in the menu
+        }, 50); // Add a small delay for better transition effect
+    });
 
-var getHubergerIcon = document.getElementById("hamburger-menu");
-var getHubergerCrossIcon = document.getElementById("hamburger-cross");
-var getMobileMenu = document.getElementById("mobile-menu");
+    getHubergerCrossIcon.addEventListener("click", function () {
+        console.log("hello");
+        getMobileMenu.style.transform = "translateX(-100%)"; // Slide out the menu
+        setTimeout(function () {
+            getMobileMenu.style.display = "none";
+        }, 300); // Wait for the transition to end before hiding
+    });
 
-getHubergerIcon.addEventListener("click", function () {
-    console.log("hello");
-    getMobileMenu.style.display = "flex";
-    setTimeout(function () {
-        getMobileMenu.style.transform = "translateX(0%)"; // Slide in the menu
-    }, 50); // Add a small delay for better transition effect
-});
+}
 
-getHubergerCrossIcon.addEventListener("click", function () {
-    console.log("hello");
-    getMobileMenu.style.transform = "translateX(-100%)"; // Slide out the menu
-    setTimeout(function () {
-        getMobileMenu.style.display = "none";
-    }, 300); // Wait for the transition to end before hiding
-});
-
+hamburger()
 
 
 
 let tl = gsap.timeline()
 
-tl.from("nav ul li ", {
-    y: -600,
-    opacity: 0,
+tl.from("nav ul li a ", {
+    y: 100,
+    // opacity: 0,
     duration: 1,
     stagger: 0.3,
 });
@@ -248,5 +232,6 @@ skills.forEach((skill, index) => {
     });
 });
 
-var validator = $( "#contact-form" ).validate();
-validator.form();
+
+
+

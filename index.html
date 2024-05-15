@@ -22,7 +22,7 @@
 
     <!--==================== MAIN ====================-->
     <main class="main">
-        <div class="navbar">
+        <nav class="navbar">
             <div class="nav-logo">
                 <img src="./assets/images/logo-transparent-svg.svg" alt="">
 
@@ -39,22 +39,29 @@
             <div class="right-part">
                 <div id="hamburger-menu">&#9776;</div>
                 <div>
-                    <input type="checkbox" id="check">
-                    <label for="check"></label>
-                    <div class="box" >
-                        <div class="ball"></div>
-                        <div class="scenery">
-                           
-                        </div>
-
-
+                    <div class="btn">
+                        <input type="checkbox" name="" id="check">
+                        <label for="check">
+                            <div class="box">
+                                <div class="ball">
+                                </div>
+                                <div class="scenary">
+                                    <div class="moon">
+                                        <img src="./assets/images/crescent-moon.png" alt="">
+                                    </div>
+                                    <div class="sun">
+                                        <img src="./assets/images/sun.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
                     </div>
                 </div>
 
 
             </div>
 
-        </div>
+        </nav>
 
         <div id="mobile-menu">
             <div class="mobile-nav-items">
@@ -274,13 +281,16 @@
             </div>
             <h2 class="primary-color">my project</h2>
             <div class="filter-section">
-                <ul>
-                    <li data-filter="all" class="active" data-filter="all">All</li>
-                    <li data-filter="camera" data-filter="gsap">gsap</li>
-                    <li data-filter="headphone" data-filter="tailwind-css">tailwind-css</li>
-                    <li data-filter="mobile" data-filter="bostrap-5">bostrap-5</li>
-                    <li data-filter="shoe" data-filter="e-comarce">e-comarce</li>
-                </ul>
+                <div class="filter-button">
+                    <ul>
+                        <li data-filter="all" class="active" data-filter="all">All</li>
+                        <li data-filter="camera" data-filter="gsap">gsap</li>
+                        <li data-filter="headphone" data-filter="tailwind-css">tailwind-css</li>
+                        <li data-filter="mobile" data-filter="bostrap-5">bostrap-5</li>
+                        <li data-filter="shoe" data-filter="e-comarce">e-comarce</li>
+                    </ul>   
+                </div>
+
                 <div class="portfolio">
                     <div class="project" data-filter="gsap">
                         <div class="project-showbox">
@@ -294,7 +304,7 @@
                             <div class="overlay-content">
 
                                 <a href=""><i class="ri-add-line"></i></a>
-                                <a href="https://joni7679.github.io/spotify-clone/"><i class="ri-links-fill"></i></a>
+                                <a  target="_blank" href=" https://joni7679.github.io/grocery_store.com/"><i class="ri-links-fill"></i></a>
                             </div>
                         </div>
                     </div>
@@ -310,7 +320,7 @@
                         <div class="overlay">
                             <div class="overlay-content">
                                 <a href=""><i class="ri-add-line"></i></a>
-                                <a href="https://joni7679.github.io/blob_site/"><i class="ri-links-fill"></i></a>
+                                <a target="_blank" href="https://joni7679.github.io/netfix-clone/"><i class="ri-links-fill"></i></a>
                             </div>
                         </div>
                     </div>
@@ -327,7 +337,7 @@
                         <div class="overlay">
                             <div class="overlay-content">
                                 <a href=""><i class="ri-add-line"></i></a>
-                                <a href="https://joni7679.github.io/blob_site/"><i class="ri-links-fill"></i></a>
+                                <a target="_blank" href="https://joni7679.github.io/spotify-clone/"><i class="ri-links-fill"></i></a>
                             </div>
                         </div>
                     </div>
@@ -344,7 +354,7 @@
                         <div class="overlay">
                             <div class="overlay-content">
                                 <a href=""><i class="ri-add-line"></i></a>
-                                <a href="https://joni7679.github.io/blob_site/"><i class="ri-links-fill"></i></a>
+                                <a target="_blank" href="https://joni7679.github.io/spotify-clone/"><i class="ri-links-fill"></i></a>
                             </div>
                         </div>
                     </div>
@@ -361,7 +371,7 @@
                         <div class="overlay">
                             <div class="overlay-content">
                                 <a href=""><i class="ri-add-line"></i></a>
-                                <a href="https://joni7679.github.io/blob_site/"><i class="ri-links-fill"></i></a>
+                                <a target="_blank" href="https://joni7679.github.io/signifo-clone/"><i class="ri-links-fill"></i></a>
                             </div>
                         </div>
                     </div>
@@ -378,7 +388,7 @@
                         <div class="overlay">
                             <div class="overlay-content">
                                 <a href=""><i class="ri-add-line"></i></a>
-                                <a href="https://joni7679.github.io/blob_site/"><i class="ri-links-fill"></i></a>
+                                <a target="_blank" href="https://joni7679.github.io/LAZAREV/"><i class="ri-links-fill"></i></a>
                             </div>
                         </div>
                     </div>
@@ -877,43 +887,36 @@
                   -------------------------------------------------------------
                   ------------------------------------------------------------>
 
-                    <form action="" method="get" id="contact-form" >
+                    <form action="" method="get" id="contact-form">
                         <!-- Name -->
                         <div class="form-group position-relative">
-                            <label for="formName" class="d-block">
-                        
-                            </label>
-                            <input type="text" id="formName" class="form-control form-control-lg thick"
+                            <label for="formName" class="d-block"></label>
+                            <input type="text" id="formName" name="formName" class="form-control form-control-lg thick"
                                 placeholder="Name" required>
                         </div>
-                        <!-- phone -->
+                        <!-- Phone -->
                         <div class="form-group position-relative">
-                            <label for="phonenum" class="d-block">
-                                
-                            </label>
-                            <input type="number" id="phonenum" class="form-control form-control-lg thick"
-                                placeholder="Phone number" required>
+                            <label for="phonenum" class="d-block"></label>
+                            <input type="number" id="phonenum" name="phonenum"
+                                class="form-control form-control-lg thick" placeholder="Phone number" required>
                         </div>
                         <!-- E-mail -->
                         <div class="form-group position-relative">
-                            <label for="formEmail" class="d-block">
-                            
-                            </label>
-                            <input type="email" id="formEmail" class="form-control form-control-lg thick"
-                                placeholder="E-mail" required>
+                            <label for="formEmail" class="d-block"></label>
+                            <input type="email" id="formEmail" name="formEmail"
+                                class="form-control form-control-lg thick" placeholder="E-mail" required>
                         </div>
-
                         <!-- Message -->
                         <div class="form-group message">
-                            <textarea id="formMessage" class="form-control form-control-lg" rows="7"
+                            <textarea id="formMessage" name="formMessage" class="form-control form-control-lg" rows="7"
                                 placeholder="Mensagem" required></textarea>
                         </div>
-
                         <!-- Submit btn -->
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary" tabIndex="-1">Send message</button>
                         </div>
                     </form>
+
 
                 </div>
             </div>
@@ -928,11 +931,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script> -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/jquery.validate.min.js" integrity="sha512-WMEKGZ7L5LWgaPeJtw9MBM4i5w5OSBlSjTjCtSnvFJGSVD26gE5+Td12qN5pvWXhuWaWcVwF++F7aqu9cvqP0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.19.3/jquery.validate.min.js"></script>
     <!--==================== MAIN JS ====================-->
     <script src="./assets/js/script.js"></script>
-    
+    <script src="./assets/js/validation.js"></script>
 </body>
 
 </html>

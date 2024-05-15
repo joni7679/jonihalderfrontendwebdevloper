@@ -25,6 +25,8 @@ html {
 
 body {
     overflow-x: hidden;
+    transition: background-color 0.5s ease;
+
 }
 
 
@@ -38,15 +40,17 @@ body {
     --black: #000;
 }
 
-.dark-them {
+.dark-theme {
     --primary-color: #0189FF;
-    --bg-color: #121213;
+    --bg-color: #2a2a2d;
     --bg-thried-color: #2d2e2e;
     --gry-color: #fcfcfc;
     --black: #fff;
     --bg-sec-color: #121213;
 
 }
+
+
 
 main {
     text-transform: capitalize;
@@ -90,12 +94,14 @@ input[type="checkbox"] {
     /* Using the $time variable */
     position: relative;
 }
-.right-part{
+
+.right-part {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 25px;
 }
+
 .ball {
     width: 60px;
     height: 60px;
@@ -123,12 +129,21 @@ input[type="checkbox"] {
 .moon,
 .sun {
     position: absolute;
-    top: 0;
+    top: 7px;
+}
+
+.sun {
+    left: 2px;
+}
+
+.moon {
+    right: 2px;
 }
 
 .moon img,
 .sun img {
-    width: 50px; /* adjust as needed */
+    width: 40px;
+    /* adjust as needed */
     height: auto;
 }
 
@@ -300,7 +315,7 @@ input[type="checkbox"] {
     position: relative;
     height: 75vh;
     font-family: ppnenemachina;
-
+    background-color: var(--bg-color);
 }
 
 .skill {
@@ -325,7 +340,7 @@ input[type="checkbox"] {
     /* border: 1px solid gray; */
     border-radius: 50%;
     position: absolute;
-    /* top: 95%; */
+    top: 95%;
     left: 50%;
     transform: translate(-50%, -50%);
 
@@ -607,6 +622,7 @@ input[type="checkbox"] {
 
 .contact-section {
     padding: 10%;
+    background-color: var(--bg-color);
 }
 
 .form-container {
