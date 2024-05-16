@@ -192,29 +192,29 @@ projectShowCaseAni()
 const items = document.querySelectorAll("ul li");
 const projectSce = document.querySelectorAll(".portfolio .project");
 
+
 items.forEach((item) => {
-    item.addEventListener("click", () => {
-        // Remove active class from all items
-        items.forEach((menuItem) => {
-            menuItem.classList.remove("active");
-        });
-        item.classList.add("active");
-
-        // // Filter
-        // const valueAttr = item.getAttribute("data-filter");
-        // projectSce.forEach((projectItem) => {
-        //     projectItem.classList.add("hide"); // Hide all projects by default
-        //     if (
-        //         projectItem.getAttribute("data-filter").toLowerCase() ==
-        //         valueAttr.toLowerCase() ||
-        //         valueAttr == "all"
-        //     ) {
-        //         projectItem.classList.remove("hide");
-        //     }
-        // });
+  // Active
+  item.addEventListener("click", () => {
+    items.forEach((item) => {
+      item.classList.remove("active");
     });
-});
+    item.classList.add("active");
 
+    // Filter
+    const valueAttr = item.getAttribute("data-filter");
+    projectSce.forEach((item) => {
+      item.style.display = "none";
+      if (
+        item.getAttribute("data-filter").toLowerCase() ==
+          valueAttr.toLowerCase() ||
+        valueAttr == "all"
+      ) {
+        item.style.display = "flex";
+      }
+    });
+  });
+});
 
 
 
@@ -235,3 +235,17 @@ skills.forEach((skill, index) => {
 
 
 
+document.querySelectorAll('.filter-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        const filter = button.getAttribute('data-filter');
+        const projects = document.querySelectorAll('.project-card');
+
+        projects.forEach(project => {
+            if (filter === 'all' || project.getAttribute('data-category') === filter) {
+                gsap.fromTo(project, { x: '100%', opacity: 0 }, { duration: 0.5, x: '0%', opacity: 1, display: 'flex' });
+            } else {
+                gsap.to(project, { duration: 0.5, opacity: 0, display: 'none' });
+            }
+        });
+    });
+});
