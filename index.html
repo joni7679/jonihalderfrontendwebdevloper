@@ -7,6 +7,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://jqueryvalidation.org/files/demo/site-demos.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
 
     <!--==================== CSS ====================-->
@@ -98,7 +99,7 @@
                 </div>
                 <div class="devloper-img">
                     <img src="./assets/images/devloper.png" alt="">
-                    <!-- <img src="./assets/images/devloper-img.png" alt=""> -->
+
 
                 </div>
             </div>
@@ -136,8 +137,9 @@
                         </div>
 
                         <div class="mt-25 flex align-center gap-6">
-                            <button class="btn primary-btn">downolad cv <i
-                                    class="ri-arrow-right-wide-line"></i></button>
+                            <a href="./assets/resume.pdf" download="joni-halder-cv"><button
+                                    class="btn primary-btn">downolad cv<i class="ri-arrow-right-wide-line"></i></button>
+                            </a>
                             <h5>Follow me</h5>
                             <div class="social-icons">
                                 <div class="icon">
@@ -284,10 +286,10 @@
                 <div class="filter-button">
                     <ul>
                         <li class="filter-btn active" data-filter="all">All</li>
-                        <li  class="filter-btn"        data-filter="gsap">gsap</li>
-                        <li  class="filter-btn"        data-filter="tailwind-css">tailwind-css</li>
-                        <li  class="filter-btn"        data-filter="bostrap-5">bostrap-5</li>
-                        <li  class="filter-btn"        data-filter="e-comarce">e-comarce</li>
+                        <li class="filter-btn" data-filter="gsap">gsap</li>
+                        <li class="filter-btn" data-filter="tailwind-css">tailwind-css</li>
+                        <li class="filter-btn" data-filter="bostrap-5">bostrap-5</li>
+                        <li class="filter-btn" data-filter="e-comarce">e-comarce</li>
                     </ul>
                 </div>
 
@@ -893,7 +895,7 @@
                   -------------------------------------------------------------
                   ------------------------------------------------------------>
 
-                    <form action="" method="get" id="contact-form">
+                    <form action="" method="post" id="contact-form" autocomplete="off">
                         <!-- Name -->
                         <div class="form-group position-relative">
                             <label for="formName" class="d-block"></label>
@@ -903,7 +905,7 @@
                         <!-- Phone -->
                         <div class="form-group position-relative">
                             <label for="phonenum" class="d-block"></label>
-                            <input type="number" id="phonenum" name="phonenum"
+                            <input type="text" id="phonenum" name="phonenum"
                                 class="form-control form-control-lg thick" placeholder="Phone number" required>
                         </div>
                         <!-- E-mail -->
@@ -937,11 +939,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script> -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+
     <!--==================== MAIN JS ====================-->
     <script src="./assets/js/script.js"></script>
-    <!-- <script src="./assets/js/validation.js"></script> -->
+    <script src="./assets/js/validation.js"></script>
 </body>
 
 </html>
