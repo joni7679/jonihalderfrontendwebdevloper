@@ -1,11 +1,10 @@
 .navbar {
-    position: fixed;
-    z-index: 888;
+   
     width: 100%;
     display: flex;
     padding: 10px;
     background: rgb(2, 0, 36);
-    background: linear-gradient(90deg,  #a4e7f1,  rgba(0, 212, 255, 1) 100%);
+    /* background: linear-gradient(90deg,  #a4e7f1,  rgba(0, 212, 255, 1) 100%); */
     justify-content: space-around;
     align-items: center;
     box-shadow: 7px 5px 15px -4px rgba(0, 0, 0, 0.75);

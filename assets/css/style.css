@@ -40,16 +40,22 @@ body {
     --white: #fff;
     --gry-color: #746868;
     --black: #000;
+    --darkorange: #FA5B0F;
+    --white: #000
 }
 
 .dark-theme {
     --primary-color: #369df7;
-    --bg-color: #2a2a2d;
+    --bg-color: #222222;
     --bg-thried-color: #2d2e2e;
     --gry-color: #fcfcfc;
     --black: #fff;
-    --bg-sec-color: #121213;
+    --bg-sec-color: #222222;
+    --white: #fff
+}
 
+ul li {
+    list-style: none;
 }
 
 .loader-animation {
@@ -58,10 +64,40 @@ body {
     z-index: 999;
     width: 100%;
     height: 100vh;
-    
+    overflow: hidden;
+}
+
+.loader-div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#loader {
+    width: 200px;
+    height: 200px;
+    border: 5px solid #ddd;
+    border-radius: 50%;
+    border-top-color: #252323;
+    animation: spin 1s infinite linear;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#value {
+    color: #fff;
 }
 
 
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
 
 main {
     text-transform: capitalize;
@@ -79,6 +115,11 @@ main {
 
 .primary-color {
     color: var(--primary-color);
+
+}
+
+.dark-orange-color {
+    color: var(--darkorange);
     text-align: center;
     font-size: 3vw;
     padding: 10px;
@@ -99,7 +140,7 @@ input[type="checkbox"] {
     height: 60px;
     border-radius: 75px;
     cursor: pointer;
-    background-color: #4ecfff;
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -170,12 +211,57 @@ input[type="checkbox"] {
 
 .home-section {
     width: 100%;
-    /* height: 100vh; */
+    height: 100vh;
     background-color: var(--bg-color);
     padding: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.home-section .flex {
+#profile {
+    width: 300px;
+    height: 300px;
+    border: 5px solid #dddd;
+    border-radius: 50% !important;
+    overflow: hidden;
+}
+
+#profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.info {
+    width: 50%;
+}
+
+.info h2 {
+    margin-top: 15px;
+}
+
+.info p {
+    margin-top: 15px;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.cus-btn {
+    background-color: #FA5B0F;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    text-transform: capitalize;
+    padding: 15px 25px;
+    border-radius: 25px;
+}
+
+/* 
+/* .home-section .flex {
     width: 100%;
     height: 100%;
 }
@@ -190,25 +276,24 @@ input[type="checkbox"] {
 }
 
 .devloper-img {
-    width: 50%;
+    width: 50vw;
     position: relative;
+} */
+
+
+
+
+
+
+.white-text {
+    color: var(--white);
 }
 
 
-.devloper-img img {
-    width: 100%;
-    object-fit: cover;
+.highlight {
+    color: var(--darkorange);
+    text-transform: uppercase;
 }
-
-.dev-img {
-    width: 300px;
-}
-
-.dev-img img {
-    width: 100%;
-}
-
-
 
 .bannner-tittle {
     z-index: 3;
@@ -223,7 +308,7 @@ input[type="checkbox"] {
     color: var(--gry-color);
 }
 
-.btn {
+*/ .btn {
     border: none;
     outline: none;
     cursor: pointer;
@@ -271,45 +356,10 @@ input[type="checkbox"] {
     padding: 13px 35px;
 }
 
-.about-section h1 {
-    color: var(--primary-color);
-    text-align: center;
-    font-family: ppnenemachina;
-    font-size: 3vw;
 
-}
-
-.primary-btn i {
-    color: var(--white) !important;
-}
-
-.about-right {
-    width: 550px;
-    /* background-color: yellowgreen; */
-    padding: 7PX;
-}
-
-.about-left {
-    width: 50%;
-}
-
-.about-right ul li {
-    color: var(--black);
-}
-
-.about-right ul li span,
-.about-right p {
-    color: var(--gry-color);
-}
-
-.about-right h5 {
-    color: var(--gry-color);
-}
-
-.about-right i {
-    color: var(--gry-color);
-    cursor: pointer;
-
+.about-left-part {
+    width: 50vw;
+    color: #fff;
 }
 
 .social-icons {
@@ -318,9 +368,75 @@ input[type="checkbox"] {
     gap: 10px;
 }
 
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.describction {
+    width: 400px;
+
+}
+
+.describction {
+    color: var(--white);
+}
+
+.devloper-pic-fream {
+    width: 300px;
+    height: 300px;
+    border: 4px solid var(--darkorange);
+    position: relative;
+}
+
+.dev-img {
+    width: 300px;
+    position: absolute;
+    top: -21px;
+    left: -29px;
+}
+
+.social-icons {
+    position: absolute;
+    bottom: 30px;
+}
+
+.icon {
+    border: 3px solid var(--darkorange);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.icon {
+    transition: all 0.5s;
+    color: var(--darkorange);
+}
+
+.icon:hover {
+    background-color: var(--darkorange);
+    color: var(--black);
+    transform: rotate(360deg);
+}
+
+.icon i {
+    transition: color 0.5s;
+}
+
+.icon:hover i {
+    color: #000;
+}
+
+
 
 /* skill section 
 */
+
 
 .skills-section {
     width: 100%;
@@ -504,7 +620,7 @@ input[type="checkbox"] {
 
 .filter-section ul li.active {
     color: #fff;
-    background: #03a9fa;
+    background: var(--darkorange);
 }
 
 .portfolio-section {
@@ -873,6 +989,16 @@ form {
     .bannner-tittle {
         margin-top: 70px !important;
     }
+}
+
+@media (max-width:750px) {
+
+    .home-section,
+    .container {
+        flex-direction: column-reverse;
+        gap: 20px;
+    }
+
 }
 
 @media (max-width:500px) {

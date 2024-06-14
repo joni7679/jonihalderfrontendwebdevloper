@@ -1,4 +1,17 @@
 
+
+function autotyping() {
+    let elements = document.querySelectorAll('.highlight');
+    elements.forEach(element => {
+        new Typed(element, {
+            strings: ["Joni Halder", "Web Developer"],
+            typeSpeed: 150,
+            backSpeed: 150,
+            loop: true,
+        });
+    });
+}
+autotyping()
 // darkmod and light mode
 function darkTheme() {
 
@@ -194,26 +207,26 @@ const projectSce = document.querySelectorAll(".portfolio .project");
 
 
 items.forEach((item) => {
-  // Active
-  item.addEventListener("click", () => {
-    items.forEach((item) => {
-      item.classList.remove("active");
-    });
-    item.classList.add("active");
+    // Active
+    item.addEventListener("click", () => {
+        items.forEach((item) => {
+            item.classList.remove("active");
+        });
+        item.classList.add("active");
 
-    // Filter
-    const valueAttr = item.getAttribute("data-filter");
-    projectSce.forEach((item) => {
-      item.style.display = "none";
-      if (
-        item.getAttribute("data-filter").toLowerCase() ==
-          valueAttr.toLowerCase() ||
-        valueAttr == "all"
-      ) {
-        item.style.display = "flex";
-      }
+        // Filter
+        const valueAttr = item.getAttribute("data-filter");
+        projectSce.forEach((item) => {
+            item.style.display = "none";
+            if (
+                item.getAttribute("data-filter").toLowerCase() ==
+                valueAttr.toLowerCase() ||
+                valueAttr == "all"
+            ) {
+                item.style.display = "flex";
+            }
+        });
     });
-  });
 });
 
 
@@ -249,3 +262,21 @@ document.querySelectorAll('.filter-btn').forEach(button => {
         });
     });
 });
+
+
+let valueElement = document.getElementById('value');
+let percentage = 1;
+
+const incrementPercentage = () => {
+    if (percentage < 100) {
+        percentage++;
+        valueElement.textContent = percentage + '%';
+        setTimeout(incrementPercentage, 10); // Adjust the timeout for speed control
+    } else {
+        valueElement.textContent = '100%';
+    }
+}
+
+setTimeout(incrementPercentage, 10);
+
+
