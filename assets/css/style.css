@@ -497,7 +497,7 @@ input[type="checkbox"] {
     display: flex;
     flex-wrap: wrap;
     width: 80%;
-    height: 60vh;
+
     justify-content: space-around;
     align-items: center;
 
