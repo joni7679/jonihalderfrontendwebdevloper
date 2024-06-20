@@ -162,8 +162,8 @@ tl.from(".about-left-part", {
         trigger: ".about-left-part", // Element to be triggered
         start: "top 50%", // Start trigger when top of trigger element hits the middle of the viewport
         end: "bottom 70%", // End trigger when bottom of trigger element hits the middle of the viewport
-        scrub: true, // Smooth scrolling effect
-        markers: true // Adds markers for debugging
+        scrub: 2, // Smooth scrolling effect
+        // markers: true // Adds markers for debugging
     }
 });
 
