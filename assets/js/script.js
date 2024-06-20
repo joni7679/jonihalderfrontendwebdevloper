@@ -36,11 +36,11 @@ window.addEventListener('mousemove', (e) => {
 
 cursorScale.forEach(link => {
     link.addEventListener('mousemove', () => {
-       
+
     });
 
     link.addEventListener('mouseleave', () => {
-      
+
     });
 })
 // darkmod and light mode
@@ -107,30 +107,32 @@ function hamburger() {
 }
 
 hamburger()
+function bannersectionAnimation() {
+    gsap.from(".info", {
+        x: 700,
+        opacity: 0,
+        duration: 0.5,
+    })
+    gsap.from(".profile", {
+        opacity: 0,
+        scale: 0,
+        duration: 0.5,
+
+    })
+}
+bannersectionAnimation()
 
 
 
-let tl = gsap.timeline()
 
-tl.from("nav ul li a ", {
-    y: 100,
-    // opacity: 0,
-    duration: 1,
-    stagger: 0.3,
-});
+// gsap.from(".nav-items ul li a ", {
+//     y: 100,
+//     // opacity: 0,
+//     duration: 1,
+//     stagger: 0.3,
+// });
 
-tl.from(".bannner-tittle", {
-    x: -700,
-    opacity: 0,
-    duration: 0.5,
-})
 
-tl.from(".devloper-img", {
-    opacity: 0,
-    scale: 0,
-    duration: 0.5,
-
-})
 
 
 
@@ -147,37 +149,39 @@ tl.from(".devloper-img", {
 // }
 // })
 
-tl.from(".line span", 1.8, {
-    y: 100,
-    ease: "power4.out",
-    // delay: 1,
-    // skewY: 7,
+
+
+
+let tl = gsap.timeline()
+
+tl.from(".about-left-part", {
+    x: -700, // Move 200 pixels horizontally
+    // rotation: 360, // Rotate 360 degrees
+    duration: 0.5, // Animation duration
     scrollTrigger: {
-        trigger: ".line",
-        scroller: "body",
-        // markers: true,
-        start: "50% 50%",
-        end: "bottom 50%",
-        scrub: 3,
-    },
-    stagger: {
-        amount: 0.3
-    },
-})
+        trigger: ".about-left-part", // Element to be triggered
+        start: "top 50%", // Start trigger when top of trigger element hits the middle of the viewport
+        end: "bottom 70%", // End trigger when bottom of trigger element hits the middle of the viewport
+        scrub: true, // Smooth scrolling effect
+        markers: true // Adds markers for debugging
+    }
+});
 
+    tl.from(".about-right-part", {
 
-// tl.from(".about-left", {
-//     x: -700, // Move 200 pixels horizontally
-//     // rotation: 360, // Rotate 360 degrees
-//     duration: 2, // Animation duration
-//     scrollTrigger: {
-//         trigger: ".about-left", // Element to be triggered
-//         start: "top 50%", // Start trigger when top of trigger element hits the middle of the viewport
-//         end: "bottom 50%", // End trigger when bottom of trigger element hits the middle of the viewport
-//         scrub: true, // Smooth scrolling effect
-//         // markers: true // Adds markers for debugging
-//     }
-// });
+        opacity: 0,
+        scale: 0,
+        duration: 0.5,
+        duration: 0.5, // Animation duration
+        scrollTrigger: {
+            trigger: ".about-right-part", // Element to be triggered
+            start: "top 50%", // Start trigger when top of trigger element hits the middle of the viewport
+            end: "bottom 70%", // End trigger when bottom of trigger element hits the middle of the viewport
+            scrub: 3, // Smooth scrolling effect
+            // markers: true // Adds markers for debugging
+        }
+    });
+
 
 
 // function skillHeadingFunction() {

@@ -1,0 +1,122 @@
+@media screen and (max-width:900px) {
+    .cricle {
+        top: 125%;
+    }
+}
+
+
+
+
+@media (max-width: 850px) {
+    .form-container {
+        flex-direction: column;
+    }
+}
+
+
+@media (max-width:800px) {
+
+    .home-section .flex {
+        flex-direction: column-reverse;
+    }
+
+    .about-section .flex {
+        flex-direction: column;
+    }
+
+    .about-left {
+        text-align: center;
+        /* Center align the image */
+    }
+
+    .skills-section {
+        /* margin-top: 290px; */
+    }
+}
+
+
+@media (max-width:680px) {
+    .info {
+        width: 100%;
+    }
+
+}
+
+@media (max-width:850px) {
+    .container {
+        flex-direction: column-reverse;
+    }
+}
+
+@media (max-width:850px) {
+    .about-left-part {
+        margin-top: 50px;
+    }
+
+}
+
+@media (max-width:798px) {
+    .bannner-tittle {
+        margin-top: 70px !important;
+    }
+}
+
+@media (max-width:750px) {
+
+    .home-section {
+        flex-direction: column-reverse;
+        gap: 20px;
+    }
+
+}
+
+@media (max-width:595px) {
+    .about-left-part {
+        width: 100%;
+    }
+}
+
+@media (max-width:500px) {
+    .home-section .flex {
+        justify-content: flex-end;
+    }
+
+    .banner-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 8px;
+    }
+    .describction{
+        width: 300px;
+    }
+
+}
+
+@media (max-width:550px) {
+    .about-right {
+        padding: 25px 114px;
+    }
+}
+
+@media (max-width:530px) {
+    .filter-button {
+        padding: 20px;
+        /* background: red; */
+        overflow-x: auto;
+        width: 400px;
+
+    }
+
+}
+
+
+
+@media (max-width:400px) {
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
