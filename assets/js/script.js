@@ -167,20 +167,20 @@ tl.from(".about-left-part", {
     }
 });
 
-    tl.from(".about-right-part", {
+tl.from(".about-right-part", {
 
-        opacity: 0,
-        scale: 0,
-        duration: 0.5,
-        duration: 0.5, // Animation duration
-        scrollTrigger: {
-            trigger: ".about-right-part", // Element to be triggered
-            start: "top 50%", // Start trigger when top of trigger element hits the middle of the viewport
-            end: "bottom 70%", // End trigger when bottom of trigger element hits the middle of the viewport
-            scrub: 3, // Smooth scrolling effect
-            // markers: true // Adds markers for debugging
-        }
-    });
+    opacity: 0,
+    scale: 0,
+    duration: 0.5,
+    duration: 0.5, // Animation duration
+    scrollTrigger: {
+        trigger: ".about-right-part", // Element to be triggered
+        start: "top 50%", // Start trigger when top of trigger element hits the middle of the viewport
+        end: "bottom 70%", // End trigger when bottom of trigger element hits the middle of the viewport
+        scrub: 3, // Smooth scrolling effect
+        // markers: true // Adds markers for debugging
+    }
+});
 
 
 
@@ -300,18 +300,60 @@ document.querySelectorAll('.filter-btn').forEach(button => {
 
 
 let valueElement = document.getElementById('value');
-let percentage = 1;
+// let percentage = 1;
 
-const incrementPercentage = () => {
-    if (percentage < 100) {
-        percentage++;
-        valueElement.textContent = percentage + '%';
-        setTimeout(incrementPercentage, 10); // Adjust the timeout for speed control
-    } else {
-        valueElement.textContent = '100%';
-    }
+// const incrementPercentage = () => {
+//     if (percentage < 100) {
+//         percentage++;
+//         valueElement.textContent = percentage + '%';
+//         setTimeout(incrementPercentage, 10); // Adjust the timeout for speed control
+//     } else {
+//         valueElement.textContent = '100%';
+//     }
+// }
+
+// setTimeout(incrementPercentage, 10);
+
+
+function TextAnimation() {
+    let textAni = document.querySelector(".dark-orange-color");
+    let textContent = textAni.textContent;
+    textAni.innerHTML = "";
+    textContent.split("").forEach((char) => {
+        let span = document.createElement("span");
+        span.textContent = char;
+        textAni.appendChild(span);
+    });
+
+    gsap.from(".dark-orange-color span", {
+        duration: 1.5,
+        y: -100,
+        ease: "power4",
+        opacity: 0,
+        stagger: 0.1,
+        scrollTrigger: {
+            trigger: ".about-section",
+            start: "top 70%",
+            end: "bottom 50%",
+            scrub: 4,
+            // markers: true
+        }
+    });
 }
+TextAnimation();
+let skill = document.querySelectorAll(".skill");
 
-setTimeout(incrementPercentage, 10);
-
-
+gsap.from(".skill", {
+    opacity: 0,
+    // scale: 0,
+    duration: 0.5,
+    stagger: 0.3,
+    scrollTrigger: {
+        trigger: ".skills-showcase",
+        scroller: "body",
+        markers: true,
+        start: "top 50%",
+        end: "bottom 80%",
+        scrub: 4,
+    }
+});

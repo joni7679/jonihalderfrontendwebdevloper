@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .allwrps {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .single {
+            width: 190px;
+            height: 190px;
+            text-align: center;
+            line-height: 200px;
+            background: red;
+            margin: 0 5px;
+            margin-top: 10px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: .3s;
+        }
+
+        .btns {
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 30px;
+        }
+
+        .btns button {
+            padding: 15px 40px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            margin: 0 10px;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .btns button:hover,
+        .btns button.active {
+            background: blueviolet;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="btns">
+        <button type="button" data-menu="all">All</button>
+        <button type="button" data-menu="green">Green</button>
+        <button type="button" data-menu="pirple">Pirple</button>
+        <button type="button" data-menu="cadetblue">Cadetblue</button>
+        <button type="button" data-menu="red">Red</button>
+        <button type="button" data-menu="gray">Gray</button>
+    </div>
+    <div class="allwrps">
+        <div data-menu="green" class="single" style="background-color: green;">Green</div>
+        <div data-menu="pirple" class="single" style="background-color: blueviolet;">Pirple</div>
+        <div data-menu="red" class="single">Red</div>
+        <div data-menu="pirple" class="single" style="background-color: blueviolet;">Pirple</div>
+        <div data-menu="green" class="single" style="background-color: green;">Green</div>
+        <div data-menu="red" class="single">Red</div>
+        <div data-menu="pirple" class="single" style="background-color: blueviolet;">Pirple</div>
+        <div data-menu="cadetblue" class="single" style="background-color: cadetblue;">Cadetblue</div>
+        <div data-menu="green" class="single" style="background-color: green;">Green</div>
+        <div data-menu="cadetblue" class="single" style="background-color: cadetblue;">Cadetblue</div>
+        <div data-menu="gray" class="single" style="background-color: darkgray;">Gray</div>
+    </div>
+    <script>
+
+        function Filtering() {
+            let buttons = document.querySelectorAll('.btns button')
+            let blocks = document.querySelectorAll('.single')
+            buttons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    blocks.forEach(block => {
+                        block.classList.remove('active')
+                        block.style.transform = `scale(0)`;
+                        block.style.opacity = `0`;
+                        block.style.visibility = `hidden`;
+                        block.style.width = `0`;
+                        block.style.marginLeft = `0`;
+                        block.style.marginRight = `0`;
+                        block.style.height = `0`;
+                    })
+
+                    blocks.forEach(blk => {
+                        if (e.target.dataset.menu == blk.dataset.menu) {
+                            blk.classList.add('active')
+                            blk.style.transform = `scale(1)`;
+                            blk.style.opacity = `1`;
+                            blk.style.visibility = `visible`;
+                            blk.style.width = `190px`;
+                            blk.style.marginLeft = `5px`;
+                            blk.style.marginRight = `5px`;
+                            blk.style.height = `190px`;
+                        }
+                    })
+                    if (e.target.dataset.menu == 'all') {
+                        blocks.forEach(block => {
+                            block.classList.add('active')
+                            block.style.transform = `scale(1)`;
+                            block.style.opacity = `1`;
+                            block.style.visibility = `visible`;
+                            block.style.width = `190px`;
+                            block.style.marginLeft = `5px`;
+                            block.style.marginRight = `5px`;
+                            block.style.height = `190px`;
+                        })
+                    }
+
+
+                })
+            })
+        }
+        Filtering()
+
+    </script>
+</body>
+
+</html>
