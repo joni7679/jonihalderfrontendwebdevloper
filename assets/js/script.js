@@ -351,7 +351,7 @@ gsap.from(".skill", {
     scrollTrigger: {
         trigger: ".skills-showcase",
         scroller: "body",
-        markers: true,
+        // markers: true,
         start: "top 50%",
         end: "bottom 80%",
         scrub: 4,
