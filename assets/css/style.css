@@ -147,6 +147,98 @@ main {
     color: var(--primary-color);
 }
 
+
+/* navbar start here */
+.navbar {
+
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    background: var(--bg-color);
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.nav-items>ul>li {
+    position: relative;
+    display: inline;
+    list-style: none;
+    margin: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.nav-items>ul>li>a {
+    color: var(--black);
+    text-decoration: none;
+}
+
+.nav-items>ul>li::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0.17rem;
+    background-color: #ffffff;
+    left: 0;
+    bottom: 0;
+    transform-origin: 0% 100%;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-items>ul>li:hover::after {
+    transform: scaleX(1);
+}
+
+.nav-logo a,
+.nav-button a {
+    color: white;
+    list-style: none;
+    text-decoration: none;
+    display: flex;
+}
+
+.nav-logo {
+    font-size: 32px;
+}
+
+
+.anim-layer {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 100%;
+    background-color: white;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-button:hover .anim-layer {
+    width: 100%;
+    left: 0;
+}
+
+.nav-button:hover a {
+    color: #141214;
+}
+
+.nav-button a {
+    display: block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+}
+
+
+
+/* navbar end here */
+
+
+
+
 /* toggle icons */
 
 input[type="checkbox"] {
@@ -368,7 +460,7 @@ input[type="checkbox"] {
 
 }
 
-.downolad-btn{
+.downolad-btn {
     background-color: transparent;
     border: 1px solid var(--darkorange);
 }
@@ -498,7 +590,7 @@ input[type="checkbox"] {
 
 .skills-showcase h1 {
     text-align: center;
-  
+
 }
 
 .skills-section {
